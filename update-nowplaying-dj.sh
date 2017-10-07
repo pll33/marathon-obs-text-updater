@@ -32,7 +32,7 @@ LINE_NUM_LOOKUP="$LINE_NUM""p"
 NOWPLAYING_DJ=$(sed -n $LINE_NUM_LOOKUP upcoming-djs.txt)
 
 ## Update hours remaining text file (read from source on OBS)
-echo $FULL_HRS_REM >> hours-remaining.txt
+echo $FULL_HRS_REM > hours-remaining.txt
 
 ## Update now playing DJ text file (read from source on OBS)
-echo $NOWPLAYING_DJ >> nowplaying-dj.txt
+echo $NOWPLAYING_DJ > nowplaying-dj.txt
