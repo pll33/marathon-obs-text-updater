@@ -23,7 +23,7 @@ fi
 NUM_DJS=$(wc -l < upcoming-djs.txt)
 
 ## Get line number for pre-populated text file based on total hours and number of DJs (1 per hour per line)
-LINE_NUM=$(echo "$FULL_HRS_REM - $NUM_DJS + 1" | bc)
+LINE_NUM=$(echo "$NUM_DJS - $FULL_HRS_REM" | bc)
 
 ## Format line number for `sed` command
 LINE_NUM_LOOKUP="$LINE_NUM""p"
