@@ -15,6 +15,7 @@ FULL_HRS_REM=$(echo "$TIME_REM / 3600" | bc)
 ## Calculate remainder seconds in that hour 
 REM_SEC_REM=$(echo "$TIME_REM % 3600" | bc)
 
+## Round up if there's a remainder (meaning the hour isn't over yet)
 if [ "$REM_SEC_REM" -lt 3600 ]; then
     FULL_HRS_REM=$(echo "$FULL_HRS_REM + 1" | bc)
 fi
@@ -36,3 +37,4 @@ echo $FULL_HRS_REM > hours-remaining.txt
 
 ## Update now playing DJ text file (read from source on OBS)
 echo $NOWPLAYING_DJ > nowplaying-dj.txt
+
